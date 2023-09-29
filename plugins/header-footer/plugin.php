@@ -1,60 +1,33 @@
 <?php
 
 /**
- * Plugin name: 
- * Description: 
- * 
+ * Plugin name: Header footer
+ * Author: Celio natti
+ * Description: Plugin Created for Ions php
  * 
  **/
 
-set_value([
-
-	'plugin_route'	=>'my-plugin',
-	'table'			=>'my_table',
-
-]);
-
-/** set user permissions for this plugin **/
-add_filter('permissions',function($permissions){
-
-	$permissions[] = 'my_permission';
-
-	return $permissions;
-});
-
-
-/** run this after a form submit **/
-add_action('controller',function(){
-
-	$vars = get_value();
-
-	require plugin_path('controllers/controller.php');
-});
-
-
 /** displays the view file **/
-add_action('view',function(){
+add_action('before_view',function(){
 
-	$vars = get_value();
+    $links = [];
+    
+    $link        = (object)[];
+    $link->id    = 0;
+    $link->title = 'Home';
+    $link->slug  = 'home';
+    $link->icon  = '';
+    $link->permission  = '';
+    $links[] = $link;
 
-	require plugin_path('views/view.php');
+    $links = do_filter(plugin_id().'_before_menu_links',$links);
+    
+	require plugin_path('views/header.php');
 });
 
+add_action('after_view',function(){
 
-/** for manipulating data after a query operation **/
-add_filter('after_query',function($data){
-
-	
-	if(empty($data['result']))
-		return $data;
-
-	foreach ($data['result'] as $key => $row) {
-		
-
-
-	}
-
-	return $data;
+	require plugin_path('views/footer.php');
 });
 
 

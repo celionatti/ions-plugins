@@ -1,7 +1,7 @@
 {
-	"name":"Header Footer",
+	"name":"Main Menu",
 	"version":"1.0.0",
-	"id":"header-footer",
+	"id":"main-menu",
 	"author":"celio natti",
 	"author website":"",
 	"thumbnail":"thumbnail.jpg",
@@ -9,7 +9,7 @@
 	"index":1,
 	"routes": {
 		"on":["all"],
-		"off":[]
+		"off":["logout", "login"]
 	},
 	"dependencies": {
 

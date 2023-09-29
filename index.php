@@ -18,7 +18,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOTPATH', __DIR__. DIRECTORY_SEPARATOR);
 
 require __DIR__ . "/config/config.php";
-require __DIR__ . "/app/Core/function.php";
+require __DIR__ . "/app/Core/functions.php";
 
 DEBUG ? ini_set('display_errors', 1) : ini_set('display_errors', 0);
 

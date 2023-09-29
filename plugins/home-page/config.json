@@ -1,14 +1,14 @@
 {
-	"name":"Header Footer",
+	"name":"Home Page",
 	"version":"1.0.0",
-	"id":"header-footer",
+	"id":"home-page",
 	"author":"celio natti",
 	"author website":"",
 	"thumbnail":"thumbnail.jpg",
 	"active":true,
-	"index":1,
+	"index":2,
 	"routes": {
-		"on":["all"],
+		"on":["home"],
 		"off":[]
 	},
 	"dependencies": {
